@@ -5,7 +5,6 @@ final class MainView: UIView {
     lazy var tableView: UITableView = {
         let view = UITableView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.delegate = self
         view.dataSource = self
         view.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         return view
@@ -59,10 +58,6 @@ private extension MainView {
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
-}
-
-extension MainView: UITableViewDelegate {
-    
 }
 
 extension MainView: UITableViewDataSource {
